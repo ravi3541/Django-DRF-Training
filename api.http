@@ -1,0 +1,71 @@
+# POST  http://127.0.0.1:8000/api/employee/
+# Content-Type: application/json
+
+# {
+#     "ename":"Gaurav  ",
+#     "designation":"SDE",
+#     "addr":"Kalvad",
+#     "salary":34000
+# }
+
+
+
+# GET http://127.0.0.1:8000/api/employee
+# Accept: application/json
+
+
+
+
+# DELETE http://127.0.0.1:8000/api/employee/7/
+# Content-Type: application/json
+
+
+
+
+
+# PUT  http://127.0.0.1:8000/api/employee/10/
+# Content-Type: application/json
+
+# {
+#     "ename":"Sia",
+#     "designation":"HR",
+#     "addr":"Gokul Nagar",
+#     "salary":39000
+# }
+
+
+#Project API Calls
+
+
+# GET http://127.0.0.1:8000/api/project/
+# Accept: application/json
+
+
+# POST  http://127.0.0.1:8000/api/project/
+# Content-Type: application/json
+
+# {
+#     "title":"Practo",
+#     "desc":"Health App",
+#     "deadline":"2022-12-25",
+#     "emp":[
+#         9,12
+#     ]
+# }
+
+
+# PUT  http://127.0.0.1:8000/api/project/3/
+# Content-Type: application/json
+
+# {
+#     "title":"1mg",
+#     "desc":"Online Pharmacy app",
+#     "deadline":"2023-04-02",
+#     "emp":[
+#         1,8,5
+#     ]
+# }
+
+
+# DELETE http://127.0.0.1:8000/api/project/3/
+# Content-Type: application/json
