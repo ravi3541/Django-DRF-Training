@@ -10,7 +10,7 @@
 
 
 
-# GET http://127.0.0.1:8000/api/employee
+# GET http://127.0.0.1:8000/api/empApi/employee
 # Accept: application/json
 
 
@@ -69,3 +69,43 @@
 
 # DELETE http://127.0.0.1:8000/api/project/3/
 # Content-Type: application/json
+
+
+
+
+#API CALLS FOR SONGS ALBUM API
+
+
+GET http://127.0.0.1:8000/api/songsApi/album
+Accept: application/json
+
+
+# POST  http://127.0.0.1:8000/api/songsApi/album/
+# Content-Type: application/json
+
+# {
+#     "name": "Adnan sami",
+#     "gender": "male",
+#     "age": 50,
+#     "city": "mumbai"
+#   }
+
+
+# DELETE  http://127.0.0.1:8000/api/songsApi/album/2/
+# Content-Type: application/json
+
+
+
+# PATCH   http://127.0.0.1:8000/api/songsApi/album/1/
+# Content-Type: application/json
+
+# {
+#     "name": "Neha Kakkar",
+#     "gender": "female",
+#     "age": 32,
+#     "city": "Delhi"
+#   }
+
+
+# GET 127.0.0.1:8000/api/songsApi/album/1/
+# Accept: application/json
