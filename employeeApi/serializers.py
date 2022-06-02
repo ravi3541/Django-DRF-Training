@@ -57,10 +57,10 @@ class EmployeeSerializer(serializers.Serializer):
 
 
 class ProjectSerializer(serializers.ModelSerializer):
-    team = EmployeeSerializer(many = True,read_only = True)# this line is not working
+    #team = EmployeeSerializer(many = True,read_only = True)# this line is not working
     class Meta:
         model = Project
-        fields = ['id','title','desc','deadline','emp','team']
+        fields = ['id','title','desc','deadline','emp']
 
         
     
