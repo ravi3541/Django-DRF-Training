@@ -4,14 +4,14 @@ from django.shortcuts import render
 from rest_framework import generics,mixins
 from .models import *
 from .serializers import *
-# Create your views here.
 
 
+# Generic View for Student List
 class StudentList(generics.ListAPIView,generics.CreateAPIView):
     queryset = Student.objects.all()
     serializer_class =StudentSerializer
 
-
+# Generic View for Student Detail
 class StudentDetail(generics.UpdateAPIView,generics.DestroyAPIView,generics.RetrieveAPIView):
     queryset = Student.objects.all()
     serializer_class =StudentSerializer
@@ -19,6 +19,7 @@ class StudentDetail(generics.UpdateAPIView,generics.DestroyAPIView,generics.Retr
 
 
 
+# Course List class using mixins
 class CourseList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPIView):
     
     queryset = Course.objects.all()
@@ -31,6 +32,7 @@ class CourseList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericA
         return self.create(request,*args,**kwargs)
 
 
+# Course Detail class using mixins
 class CourseDetail(mixins.UpdateModelMixin,mixins.DestroyModelMixin,mixins.RetrieveModelMixin,generics.GenericAPIView):
     
     queryset = Course.objects.all()

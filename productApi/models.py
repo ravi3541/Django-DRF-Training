@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Product Model
 class Product(models.Model):
     title = models.CharField(max_length=100)
     type = models.CharField(max_length=50)
@@ -12,6 +12,8 @@ class Product(models.Model):
         return self.title
 
 
+
+# Customer model
 class Customer(models.Model):
     name = models.CharField(max_length=50)
     mob = models.CharField(max_length=10)

@@ -1,12 +1,14 @@
 from .models import *
 from rest_framework import serializers
 
+# Model Serializer for Song Model
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
         fields = '__all__'
 
 
+# Model serializer for Singer Serializer
 class SingerSerializer(serializers.ModelSerializer):
     songs = SongSerializer(many=True,read_only=True)
 

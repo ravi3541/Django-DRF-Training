@@ -6,8 +6,8 @@ from .models import Customer, Product
 from rest_framework.response import Response
 from django.http import Http404
 from rest_framework import status
-from rest_framework.authentication import BasicAuthentication,SessionAuthentication
-from rest_framework.permissions import *
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated,IsAdminUser,DjangoModelPermissions
 from rest_framework import viewsets
 
 

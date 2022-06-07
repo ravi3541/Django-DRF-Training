@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Singer Model
 class Singer(models.Model):
     name = models.CharField(max_length=50)
     gender = models.CharField(max_length=6)
@@ -12,7 +12,7 @@ class Singer(models.Model):
 
     
 
-
+# Song Model
 class Song(models.Model):
     title = models.CharField(max_length=100)
     year = models.IntegerField()

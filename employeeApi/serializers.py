@@ -2,6 +2,8 @@ from rest_framework import serializers
 from employeeApi.models import Employee, Project
 import re
 
+
+# employee Serializer
 class EmployeeSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only = True)
     ename = serializers.CharField(required = True, max_length = 30)
@@ -25,28 +27,31 @@ class EmployeeSerializer(serializers.Serializer):
         return instance
 
     
+    #validation for employee name 
     def validate_ename(self,value):
         if len(value)>=3:
             if re.findall('^[a-zA-Z\s]*$',value):
-                # print("Valid ")
+               
                 return value
-            # print("Invalid") 
+             
             raise serializers.ValidationError('Name can only contain alphabets')
 
         raise serializers.ValidationError("Minimum 3 characters required")
 
 
+    #validation for employee designation 
     def validate_designation(self,value):
         if len(value)>=2:
             if re.findall('^[a-zA-Z\s]*$',value):
-                # print("Valid ")
+                
                 return value
-            # print("Invalid") 
+             
             raise serializers.ValidationError('Only Alphabets allowed')
 
         raise serializers.ValidationError("Minimum 2 characters required")
 
 
+    #validation for employee salary 
     def validate_salary(self,value):
         if value > 8000:
             return value
@@ -56,8 +61,8 @@ class EmployeeSerializer(serializers.Serializer):
 
 
 
+# Model serializer for Project model
 class ProjectSerializer(serializers.ModelSerializer):
-    #team = EmployeeSerializer(many = True,read_only = True)# this line is not working
     class Meta:
         model = Project
         fields = ['id','title','desc','deadline','emp']

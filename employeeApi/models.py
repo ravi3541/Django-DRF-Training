@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Employee Model
 
 class Employee(models.Model):
     ename = models.CharField(max_length = 30, null= False)
@@ -8,10 +8,13 @@ class Employee(models.Model):
     addr = models.TextField(max_length = 100,null= False)
     salary = models.IntegerField(null=False)
 
+    # function to return employee name 
     def __str__(self):
         return self.ename
 
     
+
+# Project Model
 
 class Project(models.Model):
     title = models.CharField(max_length=50)
@@ -19,5 +22,6 @@ class Project(models.Model):
     deadline = models.DateField()
     emp = models.ManyToManyField(Employee)
 
+    # function to return Project Title
     def __str__(self):
         return self.title

@@ -1,10 +1,8 @@
 from inspect import modulesbyfile
 from django.db import models
 
-# Create your models here.
 
-
-
+# Course Model
 class Course(models.Model):
     cname = models.CharField(max_length=20,unique=True)
     duration = models.IntegerField()
@@ -15,6 +13,7 @@ class Course(models.Model):
         return self.cname
 
 
+# Student Model
 class Student(models.Model):
     sname = models.CharField(max_length=70)
     rollno = models.IntegerField(unique=True)
